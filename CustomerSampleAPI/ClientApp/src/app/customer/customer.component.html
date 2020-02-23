@@ -1,0 +1,30 @@
+<h1 id="tableLabel">Customers</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!customers"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="customers">
+  <thead>
+    <tr>
+      <th>Customer's Name</th>
+      <th>Customer's Address</th>
+      <th>Price</th>
+      <th>Broker Name</th>
+      <th>Broker Address</th>
+      <th>Contract StartDate</th>
+      <th>Contract StartDate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of customers">
+      <td>{{ customer.customerName }}</td>
+      <td>{{ customer.customerAddress }}</td>
+      <td>{{ customer.price }}</td>
+      <td>{{ customer.brokerName }}</td>
+      <td>{{ customer.brokerAddress }}</td>
+      <td>{{ customer.shortContractStartDate }}</td>
+      <td>{{ customer.shortContractEndDate }}</td>
+    </tr>
+  </tbody>
+</table>
