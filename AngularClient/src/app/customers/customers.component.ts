@@ -4,10 +4,11 @@ import { Subscription } from 'rxjs';
 import { Customer } from '../core/customer';
 
 @Component({
-  selector: 'app-fetch-data',
-  templateUrl: './customer.component.html'
+  selector: 'app-customers',
+  templateUrl: './customers.component.html',
+  styleUrls: ['./customers.component.css']
 })
-export class CustomerComponent implements OnInit, OnDestroy {
+export class CustomersComponent implements OnInit, OnDestroy {
   public customers: Array<Customer>;
   private subscriptions: Subscription = new Subscription();
 
@@ -27,4 +28,3 @@ export class CustomerComponent implements OnInit, OnDestroy {
     this.subscriptions.unsubscribe();
   }
 }
-
