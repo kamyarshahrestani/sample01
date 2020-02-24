@@ -10,7 +10,6 @@ Version 16.4.5`
 
 ##### Details
 1. Simple API endpoint `CustomerController` with mock data memory object `CustomersData`.
-2. Angular project is located inside `ClientApp` folder.
-3. Angular App could be separate from .net core project, but in this sample project I assumed there is only one domain and I do not have any cross-origin, so, I use `Microsoft.AspNetCore.SpaServices.Extensions`.
-4. There is only one route that is implemented without lazing loading and inside I have implemented simple list view (without any graphical interface).
-
+2. Angular could run standalone by IIS or by ng serve|serve --aot commmands from `AngularClient` folder.
+3. This small app could also run at different origin Cors supprt, in this case the developer needs to config `app.config.ts` in angular app and also config origin in `startup.cs` in core service.
+4. There is routing module and also with lazing loading module.
