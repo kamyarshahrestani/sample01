@@ -1,26 +1,19 @@
+import * as moment from 'moment';
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { AppConfig } from '../app.config';
 import { Customer } from '../core/customer';
-import * as moment from 'moment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomerService {
-  private static serviceKeyControlName = 'customer';
-  private readonly baseUrl: string;
-
-  constructor(
-    private http: HttpClient,
-    @Inject('BASE_URL') baseUrl: string) {
-
-    this.baseUrl = baseUrl;
-  }
+  constructor(private http: HttpClient) { }
 
   getCustomers(): Observable<Array<Customer>> {
-    return this.http.get(`${this.baseUrl}${CustomerService.serviceKeyControlName}`)
+    return this.http.get(`${AppConfig.serviceBaseUrl}${AppConfig.customerControllerRoot}`)
       .pipe(
         map((customers: Array<any>) => {
           const result: Array<Customer> = [];
@@ -37,6 +30,6 @@ export class CustomerService {
           });
           return result;
         })
-      );;
+      );
   }
 }
