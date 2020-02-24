@@ -1,5 +1,6 @@
 .gitignore
 /.vs
+/.vs/CustomerSampleAPI
 /CustomerSampleAPI/ClientApp/node_modules
 /CustomerSampleAPI/bin
 /CustomerSampleAPI/obj
